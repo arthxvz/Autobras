@@ -1,0 +1,28 @@
+.usuario-page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-card {
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  width: 320px;
+}
+
+.ativo {
+  background: #eafaf1;
+  color: #1e8449;
+}
+
+.inativo {
+  background: #fdecea;
+  color: #c0392b;
+}
+
+.manutencao {
+  background: #fff9e6;
+  color: #b7950b;
+}
