@@ -1,104 +1,71 @@
-.dashboard {
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
+}
+
+/* LOGIN */
+.login-page {
   display: flex;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* evita colar nas bordas no celular */
 }
 
-/* Sidebar normal no PC */
-.sidebar {
-  width: 200px;
+.login-card {
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 350px; /* limita no PC */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.login-card input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
   background: #2c3e50;
   color: white;
-  padding: 20px;
-  text-decoration: none;
-}
-
-/* Conteúdo ocupa o resto */
-.content {
-  flex: 1;
-  padding: 20px;
-}
-
-/* Cards lado a lado no PC */
-.setores {
-  display: flex;
-  gap: 20px;
-}
-
-/* Card padrão */
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 200px;
-}
-
-/* Alertas */
-.alerta {
-  color: #c0392b;
-  font-weight: bold;
-}
-
-/* Tabela */
-table {
-  width: 100%;
-  margin-top: 15px;
-  border-collapse: collapse;
-}
-
-td, th {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
-
-.vermelho {
-  color: #c0392b;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
 }
 
 /* ===================================== */
 /* 📱 RESPONSIVIDADE */
 /* ===================================== */
 
-/* Tablets e telas menores */
-@media (max-width: 900px) {
-  .setores {
-    flex-wrap: wrap; /* quebra os cards */
-    justify-content: center;
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
   }
 
-  .card {
-    width: 45%; /* fica 2 por linha */
-  }
-}
-
-/* Celulares */
-@media (max-width: 600px) {
-
-  /* Dashboard vira coluna */
-  .dashboard {
-    flex-direction: column;
-    height: auto;
+  .login-card h1 {
+    font-size: 20px;
   }
 
-  /* Sidebar vira topo */
-  .sidebar {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Cards ficam um embaixo do outro */
-  .setores {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%; /* ocupa quase toda a tela */
-  }
-
-  /* Tabela vira scroll horizontal */
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+  input,
+  button {
+    font-size: 15px;
   }
 }
