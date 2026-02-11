@@ -3,15 +3,20 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* evita colar nas bordas no celular */
 }
 
 .status-card {
   padding: 40px;
   border-radius: 10px;
   text-align: center;
-  width: 320px;
+
+  width: 100%;
+  max-width: 400px; /* tamanho ideal no PC */
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
 }
 
+/* Status */
 .ativo {
   background: #eafaf1;
   color: #1e8449;
@@ -25,4 +30,21 @@
 .manutencao {
   background: #fff9e6;
   color: #b7950b;
+}
+
+/* ===================================== */
+/* 📱 RESPONSIVIDADE */
+/* ===================================== */
+
+@media (max-width: 600px) {
+
+  .status-card {
+    padding: 25px;
+    font-size: 15px;
+  }
+
+  .status-card h1,
+  .status-card h2 {
+    font-size: 20px;
+  }
 }

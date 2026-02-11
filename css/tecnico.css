@@ -3,25 +3,28 @@
   height: 100vh;
 }
 
+/* Sidebar normal no PC */
 .sidebar {
   width: 200px;
   background: #2c3e50;
   color: white;
   padding: 20px;
- text-decoration: none;
- 
+  text-decoration: none;
 }
 
+/* Conteúdo ocupa o resto */
 .content {
   flex: 1;
   padding: 20px;
 }
 
+/* Cards lado a lado no PC */
 .setores {
   display: flex;
   gap: 20px;
 }
 
+/* Card padrão */
 .card {
   background: white;
   padding: 20px;
@@ -29,11 +32,13 @@
   width: 200px;
 }
 
+/* Alertas */
 .alerta {
   color: #c0392b;
   font-weight: bold;
 }
 
+/* Tabela */
 table {
   width: 100%;
   margin-top: 15px;
@@ -47,4 +52,53 @@ td, th {
 
 .vermelho {
   color: #c0392b;
+}
+
+/* ===================================== */
+/* 📱 RESPONSIVIDADE */
+/* ===================================== */
+
+/* Tablets e telas menores */
+@media (max-width: 900px) {
+  .setores {
+    flex-wrap: wrap; /* quebra os cards */
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%; /* fica 2 por linha */
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+  /* Dashboard vira coluna */
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sidebar vira topo */
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Cards ficam um embaixo do outro */
+  .setores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* ocupa quase toda a tela */
+  }
+
+  /* Tabela vira scroll horizontal */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
